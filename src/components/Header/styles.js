@@ -19,12 +19,12 @@ export const TitleContainer = styled.div`
   }
 `
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   color: ${({ theme }) => theme.primaryText};
   font-size: 24px;
   font-weight: 700;
 `
-export const SubTitle = styled.h2`
+export const SubTitle = styled.h3`
   color: ${({ theme }) => theme.secondaryText};
   font-size: 14px;
   font-weight: 400;

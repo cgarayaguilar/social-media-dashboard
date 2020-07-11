@@ -7,7 +7,7 @@ export const Container = styled.article`
   min-height: 100px;
   transition: all 0.3s;
   &:hover {
-    filter: brightness(90%);
+    background-color: ${({ theme }) => theme.cardBackgroundHover};
     cursor: pointer;
   }
 `
