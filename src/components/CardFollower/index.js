@@ -32,7 +32,7 @@ export const CardFollower = ({
       <TopLine lineColor={lineColor} />
       <UserContainer theme={theme}>
         <img src={icon} alt='social icon' />
-        <figcaption>{username}</figcaption>
+        <span>{username}</span>
       </UserContainer>
 
       <NumFollowers theme={theme}>{kFormatter(numFollowers)}</NumFollowers>
