@@ -22,7 +22,7 @@ export const TopLine = styled.div`
   top: 0;
 `
 
-export const Figure = styled.div`
+export const Figure = styled.figure`
   align-items: center;
   display: flex;
   font-size: 12px;
