@@ -1,11 +1,15 @@
 import Styled from 'styled-components'
 
 export const Container = Styled.article`
-    height: 168px;
     background-color: ${({ theme }) => theme.cardBackground};
     border-radius: 3px;
     padding: 24px;
     position: relative;
+    transition: all .3s;
+    &:hover {
+      filter: brightness(90%);
+      cursor: pointer;
+    }
   `
 export const TopLine = Styled.div`
       border-top-left-radius: 3px;
@@ -53,5 +57,4 @@ export const IncreaseFollowers = Styled(Figure)`
     color: ${({ increase, theme }) =>
       increase ? theme.limeGreen : theme.brightRed};
     font-weight: 700;
-
 `

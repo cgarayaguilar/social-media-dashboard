@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { CardFollower } from '../CardFollower'
 import { followers } from '../../data/followers'
-import { Container } from './styles'
+import { Container, Wrapper } from './styles'
+import { ThemeContext } from 'styled-components'
 
 export const ListOfFollowers = () => {
+  const theme = useContext(ThemeContext)
+
   return (
-    <Container>
-      {followers.map((follower, index) => (
-        <CardFollower key={index} {...follower} />
-      ))}
+    <Container theme={theme}>
+      <Wrapper>
+        {followers.map((follower, index) => (
+          <CardFollower key={index} {...follower} />
+        ))}
+      </Wrapper>
     </Container>
   )
 }

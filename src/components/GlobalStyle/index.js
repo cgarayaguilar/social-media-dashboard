@@ -9,9 +9,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    height:100vh;
-    width: 100vw;
-    
+    min-height:100vh;
+    max-width: 100vw;
     background-color: ${props =>
       props.darkBackground ? 'hsl(230, 17%, 14%)' : 'hsl(0, 0%, 100%)'};
   }

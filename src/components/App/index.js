@@ -1,19 +1,28 @@
 import React from 'react'
-import { Container, ContainerTop, ContainerDown } from './styles'
+import { Container } from './styles'
+import { Context } from '../../helpers/Context'
 import { GlobalStyle } from '../GlobalStyle'
+import { Header } from '../Header'
 import { ListOfFollowers } from '../ListOfFollowers'
-import { ThemeContext } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
+import { darkTheme, lightTheme } from '../../styles/themes'
 import { useContext } from 'react'
+import { Overview } from '../Overview/index'
+import { ThemeContext } from 'styled-components'
 
 export const App = () => {
+  const { isDarkMode } = useContext(Context)
+  const themeColor = isDarkMode ? darkTheme : lightTheme
   const theme = useContext(ThemeContext)
+
   return (
-    <Container>
-      <GlobalStyle />
-      <ContainerTop theme={theme} />
-      <ContainerDown theme={theme}>
+    <ThemeProvider theme={themeColor}>
+      <Container theme={theme}>
+        <GlobalStyle />
+        <Header />
         <ListOfFollowers />
-      </ContainerDown>
-    </Container>
+        <Overview />
+      </Container>
+    </ThemeProvider>
   )
 }
