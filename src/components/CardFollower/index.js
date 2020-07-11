@@ -1,28 +1,28 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import iconDown from '../../images/icon-down.svg'
 import iconUp from '../../images/icon-up.svg'
-import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { kFormatter } from '../../helpers/kFormatter'
+import { useContext } from 'react'
 import {
   Container,
-  TopLine,
   Figure,
-  UserContainer,
+  IncreaseFollowers,
   Label,
   NumFollowers,
-  IncreaseFollowers
+  TopLine,
+  UserContainer
 } from './styles'
 
 export const CardFollower = ({
   icon,
-  lineColor,
-  username,
-  numFollowers,
+  increase,
   label,
+  lineColor,
   numComparison,
-  increase
+  numFollowers,
+  username
 }) => {
   const arrowIcon = increase ? iconUp : iconDown
   const theme = useContext(ThemeContext)
@@ -40,8 +40,8 @@ export const CardFollower = ({
       <Label theme={theme}>{label}</Label>
 
       <Figure>
-        <img src={arrowIcon} alt='arrow icon' />
         <IncreaseFollowers increase={increase} theme={theme}>
+          <img src={arrowIcon} alt='arrow icon' />
           {numComparison} Today
         </IncreaseFollowers>
       </Figure>

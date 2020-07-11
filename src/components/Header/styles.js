@@ -6,15 +6,14 @@ export const Container = styled.section`
   display: flex;
   justify-content: center;
   margin: 0;
-  padding: 16px;
   max-width: 100vw;
+  padding: 16px;
 `
 
 export const TitleContainer = styled.div`
+  border-bottom: 1px solid ${({ theme }) => theme.secondaryText};
   grid-area: 'title-container';
   padding-bottom: 16px;
-  border-bottom: 1px solid ${({ theme }) => theme.secondaryText};
-
   @media (min-width: 768px) {
     border: none;
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Container, Input, Label, Toggle } from './styles'
+import PropTypes from 'prop-types'
 
 export const ToggleButton = ({ onClick }) => {
   const theme = useContext(ThemeContext)
@@ -13,4 +14,8 @@ export const ToggleButton = ({ onClick }) => {
       <Toggle htmlFor='toggle' theme={theme}></Toggle>
     </Container>
   )
+}
+
+ToggleButton.propTypes = {
+  onClick: PropTypes.func.isRequired
 }

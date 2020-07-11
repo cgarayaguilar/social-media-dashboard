@@ -1,60 +1,61 @@
-import Styled from 'styled-components'
+import styled from 'styled-components'
 
-export const Container = Styled.article`
-    background-color: ${({ theme }) => theme.cardBackground};
-    border-radius: 3px;
-    padding: 24px;
-    position: relative;
-    transition: all .3s;
-    &:hover {
-      filter: brightness(90%);
-      cursor: pointer;
-    }
-  `
-export const TopLine = Styled.div`
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      position: absolute;
-      top:0;
-      left:0;
-      right: 0;
-      height: 3px;
-      background: ${({ lineColor }) => lineColor};
-  `
-
-export const Figure = Styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    & img{
-      margin-right: 8px;
-    }
-  `
-export const UserContainer = Styled(Figure)`
-    color: ${({ theme }) => theme.secondaryText};
-    font-weight: 700;
+export const Container = styled.article`
+  background-color: ${({ theme }) => theme.cardBackground};
+  border-radius: 3px;
+  padding: 24px;
+  position: relative;
+  transition: all 0.3s;
+  &:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+  }
+`
+export const TopLine = styled.div`
+  background: ${({ lineColor }) => lineColor};
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 `
 
-export const NumFollowers = Styled.h2`
-    color: ${({ theme }) => theme.primaryText};
-    font-weight: 700;
-    text-align: center;
-    margin: 8px;
-    font-size: 40px;
+export const Figure = styled.div`
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  & img {
+    margin-right: 8px;
+  }
 `
 
-export const Label = Styled.p`
-    color: ${({ theme }) => theme.secondaryText};
-    text-align: center;
-    margin: 8px;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 3px;
+export const UserContainer = styled(Figure)`
+  color: ${({ theme }) => theme.secondaryText};
+  font-weight: 700;
 `
 
-export const IncreaseFollowers = Styled(Figure)`
-    color: ${({ increase, theme }) =>
-      increase ? theme.limeGreen : theme.brightRed};
-    font-weight: 700;
+export const NumFollowers = styled.h2`
+  color: ${({ theme }) => theme.primaryText};
+  font-size: 40px;
+  font-weight: 700;
+  margin: 8px 8px 0 8px;
+  text-align: center;
+`
+
+export const Label = styled.p`
+  color: ${({ theme }) => theme.secondaryText};
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin: 0 8px 16px 8px;
+  text-align: center;
+  text-transform: uppercase;
+`
+
+export const IncreaseFollowers = styled(Figure)`
+  color: ${({ increase, theme }) =>
+    increase ? theme.limeGreen : theme.brightRed};
+  font-weight: 700;
 `

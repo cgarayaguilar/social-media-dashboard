@@ -1,6 +1,6 @@
-import Styled from 'styled-components'
+import styled from 'styled-components'
 
-export const Container = Styled.section`
+export const Container = styled.section`
   background: ${({ theme }) => theme.downBackground};
   display: grid;
   grid-template-rows: 200px min-content min-content;

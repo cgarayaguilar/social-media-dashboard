@@ -1,24 +1,24 @@
-import React, { useContext } from 'react'
-import { Container } from './styles'
-import { ThemeContext } from 'styled-components'
 import PropTypes from 'prop-types'
-import { kFormatter } from '../../helpers/kFormatter'
+import React, { useContext } from 'react'
 import iconDown from '../../images/icon-down.svg'
 import iconUp from '../../images/icon-up.svg'
+import { Container } from './styles'
+import { ThemeContext } from 'styled-components'
+import { kFormatter } from '../../helpers/kFormatter'
 import {
-  DimensionContainer,
   Dimension,
+  DimensionContainer,
   MetricContainer,
   NumMetric,
   Porcentage
 } from './styles'
 
 export const Cardview = ({
-  icon,
   dimension,
+  icon,
+  increase,
   metric,
-  porcentageComparison,
-  increase
+  porcentageComparison
 }) => {
   const theme = useContext(ThemeContext)
   const arrowIcon = increase ? iconUp : iconDown
@@ -42,9 +42,9 @@ export const Cardview = ({
 }
 
 Cardview.propTypes = {
-  icon: PropTypes.string.isRequired,
   dimension: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  increase: PropTypes.bool.isRequired,
   metric: PropTypes.number.isRequired,
-  porcentageComparison: PropTypes.string.isRequired,
-  increase: PropTypes.bool.isRequired
+  porcentageComparison: PropTypes.string.isRequired
 }

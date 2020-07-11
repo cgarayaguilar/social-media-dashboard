@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { metrics } from '../../data/metrics'
+import { Cardview } from '../Cardview/index'
 import { Container, Wrapper, TitleContainer, Title } from './styles'
 import { ThemeContext } from 'styled-components'
-import { Cardview } from '../Cardview/index'
+import { metrics } from '../../data/metrics'
 
 export const Overview = () => {
   const theme = useContext(ThemeContext)

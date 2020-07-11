@@ -1,20 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { ToggleButton } from '../ToggleButton'
 import {
   Container,
-  Wrapper,
+  SubTitle,
+  Title,
   TitleContainer,
   ToggleContainer,
-  Title,
-  SubTitle
+  Wrapper
 } from './styles'
 import { Context } from '../../helpers/Context'
 import { ThemeContext } from 'styled-components'
-import { useContext } from 'react'
+import PropTypes from 'prop-types'
 
-export const Header = ({ totalFollowers = 23004 }) => {
-  const { isDarkMode, activateDarkMode, disableDarkMode } = useContext(Context)
+export const Header = ({ totalFollowers }) => {
   const theme = useContext(ThemeContext)
+  const { isDarkMode, activateDarkMode, disableDarkMode } = useContext(Context)
 
   const handleClickToogle = () => {
     isDarkMode ? disableDarkMode() : activateDarkMode()
@@ -35,4 +35,8 @@ export const Header = ({ totalFollowers = 23004 }) => {
       </Wrapper>
     </Container>
   )
+}
+
+Header.propTypes = {
+  totalFollowers: PropTypes.number.isRequired
 }
